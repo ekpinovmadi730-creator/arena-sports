@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Жаңалықтар — Arena</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-active-nav="news" class="arena-unified">
+    <div id="nav-root"></div>
+
+    <main class="wrap">
+      <section class="page-shell">
+        <div class="page-hero">
+          <div class="hero-eyebrow-inline">Жедел жаңарту</div>
+          <h1 class="page-title">Жаңалықтар</h1>
+          <p class="page-sub">Жаңалықтар <code>GET /news</code> арқылы жүктеледі. Құрылым сыртқы провайдерді қосуға ыңғайлы.</p>
+        </div>
+        <div class="page-kpis" aria-label="Жаңалықтар беті">
+          <div class="page-kpi"><strong>Жанды</strong><span>Жаңарту</span></div>
+          <div class="page-kpi"><strong>API</strong><span>/news</span></div>
+          <div class="page-kpi"><strong>Жылдам</strong><span>Лента</span></div>
+        </div>
+        <div id="news-mount"></div>
+      </section>
+    </main>
+
+    <section class="arena-ads" aria-label="Реклама">
+      <div class="arena-ads__inner">
+        <div class="arena-ads__grid">
+          <a class="ad-card" href="https://nike.com" target="_blank" rel="noopener noreferrer">
+            <div class="ad-card__img" style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=60');"></div>
+            <div class="ad-card__body">
+              <div class="ad-card__title">Новая коллекция кроссовок 2026</div>
+              <div class="ad-card__meta">
+                <span class="ad-badge">РЕКЛАМА</span>
+                <span class="ad-source">nike.com</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="ad-card" href="https://adidas.kz" target="_blank" rel="noopener noreferrer">
+            <div class="ad-card__img" style="background-image:url('https://images.unsplash.com/photo-1528701800489-20be3c90a3b9?auto=format&fit=crop&w=900&q=60');"></div>
+            <div class="ad-card__body">
+              <div class="ad-card__title">Скидки до 50% на спортивную одежду</div>
+              <div class="ad-card__meta">
+                <span class="ad-badge">РЕКЛАМА</span>
+                <span class="ad-source">adidas.kz</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="ad-card" href="https://redbull.com" target="_blank" rel="noopener noreferrer">
+            <div class="ad-card__img" style="background-image:url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=60');"></div>
+            <div class="ad-card__body">
+              <div class="ad-card__title">Энергия для твоих тренировок</div>
+              <div class="ad-card__meta">
+                <span class="ad-badge">РЕКЛАМА</span>
+                <span class="ad-source">redbull.com</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="ad-card" href="https://puma.com" target="_blank" rel="noopener noreferrer">
+            <div class="ad-card__img" style="background-image:url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=60');"></div>
+            <div class="ad-card__body">
+              <div class="ad-card__title">Официальный магазин Puma в Казахстане</div>
+              <div class="ad-card__meta">
+                <span class="ad-badge">РЕКЛАМА</span>
+                <span class="ad-source">puma.com</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="arena-footer" aria-label="Төменгі мәзір">
+      <div class="arena-footer__inner">
+        <div class="arena-footer__top">
+          <div>
+            <div class="arena-footer__logo">ARE<span>NA</span></div>
+            <nav class="arena-footer__nav" aria-label="Қосымша навигация">
+              <a href="#">О проекте</a>
+              <a href="#">Рекламодателям</a>
+              <a href="#">Вакансии</a>
+              <a href="#">Конференции</a>
+              <a href="#">Карта сайта</a>
+            </nav>
+          </div>
+          <div class="arena-footer__social" aria-label="Біз әлеуметтік желілерде">
+            <a href="https://instagram.com" class="arena-footer__icon-btn arena-footer__icon-btn--ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://t.me/arena_fitbot" class="arena-footer__icon-btn arena-footer__icon-btn--tg" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://tiktok.com" class="arena-footer__icon-btn arena-footer__icon-btn--tt" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://facebook.com" class="arena-footer__icon-btn arena-footer__icon-btn--fb" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://x.com" class="arena-footer__icon-btn arena-footer__icon-btn--tw" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://vk.com" class="arena-footer__icon-btn arena-footer__icon-btn--vk" aria-label="VK" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-vk"></i>
+            </a>
+            <a href="https://youtube.com" class="arena-footer__icon-btn arena-footer__icon-btn--yt" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="arena-footer__contact-row">
+          <div class="arena-footer__contact">
+            <span class="arena-footer__contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </span>
+            <span class="arena-footer__contact-label">Реклама</span>
+            <a class="arena-footer__contact-phone" href="tel:+77000000000" target="_blank" rel="noopener noreferrer">+7 (700) 000 0000</a>
+            <span class="arena-footer__contact-sep" aria-hidden="true">·</span>
+            <a class="arena-footer__contact-email" href="mailto:arena@gmail.com" target="_blank" rel="noopener noreferrer">arena@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="arena-footer__divider"></div>
+
+        <div class="arena-footer__bottom">
+          <div class="arena-footer__bottom-left">©2026 Arena Sports Platform</div>
+          <div class="arena-footer__bottom-center">
+            <span class="arena-footer__age-badge">18+</span>
+            <span>Правила использования материалов</span>
+            <span>Ошибка в тексте? Выделите её мышью и нажмите Ctrl+Enter</span>
+          </div>
+          <div class="arena-footer__apps">
+            <span class="arena-footer__apps-label">Скачать наше приложение</span>
+            <a href="https://apps.apple.com/" class="arena-footer__store-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-apple"></i><span>App Store</span>
+            </a>
+            <a href="https://play.google.com/store" class="arena-footer__store-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-google-play"></i><span>Google Play</span>
+            </a>
+            <a href="https://appgallery.huawei.com/" class="arena-footer__store-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-store"></i><span>AppGallery</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/arena-animations.js"></script>
+    <script src="/js/news.js"></script>
+  </body>
+</html>

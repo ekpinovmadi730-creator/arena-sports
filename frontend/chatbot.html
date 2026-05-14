@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Чат-бот — Arena</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-active-nav="chatbot" class="arena-unified">
+    <div id="nav-root"></div>
+
+    <main class="wrap">
+      <section class="page-shell">
+        <div class="page-hero">
+          <div class="hero-eyebrow-inline">AI жаттықтырушы</div>
+          <h1 class="page-title">Жаттығу көмекшісі</h1>
+          <p class="page-sub">
+            Жаттығуды таңдағанда атауы автоматты түрде чатқа қойылып, сұраныс жіберіледі. Сұрақты қолмен де жазуға болады.
+          </p>
+        </div>
+        <div class="chat-tips" aria-label="Чат-ботты пайдалану">
+          <span>1) Жаттығуды таңдаңыз</span>
+          <span>2) Жауап пен видеоны алыңыз</span>
+          <span>3) Сұрағыңызды жазыңыз</span>
+        </div>
+
+        <div class="chat-layout">
+          <div class="chat-panel">
+            <div id="chat-log" class="chat-log" role="log" aria-live="polite"></div>
+            <div class="exercise-picker">
+              <label class="exercise-picker__label" for="exercise-select">Жаттығулар</label>
+              <select id="exercise-select" class="exercise-picker__select">
+                <option value="">— Жаттығуды таңдаңыз —</option>
+              </select>
+            </div>
+            <form id="chat-form" class="chat-form" autocomplete="off">
+              <input id="chat-input" type="text" name="message" placeholder="Мысалы: қыздыру, жарақат, спринт…" maxlength="2000" />
+              <button class="btn" type="submit">Жіберу</button>
+            </form>
+          </div>
+
+          <div id="video-host" class="video-card" hidden>
+            <h3 id="video-heading">Бейне мысал</h3>
+            <div class="video-wrap">
+              <iframe id="video-frame" title="Видео на YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p id="video-note"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="arena-footer" aria-label="Төменгі мәзір">
+      <div class="arena-footer__inner">
+        <div class="arena-footer__top">
+          <div>
+            <div class="arena-footer__logo">ARE<span>NA</span></div>
+            <nav class="arena-footer__nav" aria-label="Қосымша навигация">
+              <a href="#">О проекте</a>
+              <a href="#">Рекламодателям</a>
+              <a href="#">Вакансии</a>
+              <a href="#">Конференции</a>
+              <a href="#">Карта сайта</a>
+            </nav>
+          </div>
+          <div class="arena-footer__social" aria-label="Біз әлеуметтік желілерде">
+            <a href="https://instagram.com" class="arena-footer__icon-btn arena-footer__icon-btn--ig" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://t.me/arena_fitbot" class="arena-footer__icon-btn arena-footer__icon-btn--tg" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://tiktok.com" class="arena-footer__icon-btn arena-footer__icon-btn--tt" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://facebook.com" class="arena-footer__icon-btn arena-footer__icon-btn--fb" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://x.com" class="arena-footer__icon-btn arena-footer__icon-btn--tw" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://vk.com" class="arena-footer__icon-btn arena-footer__icon-btn--vk" aria-label="VK" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-vk"></i>
+            </a>
+            <a href="https://youtube.com" class="arena-footer__icon-btn arena-footer__icon-btn--yt" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="arena-footer__contact-row">
+          <div class="arena-footer__contact">
+            <span class="arena-footer__contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </span>
+            <span class="arena-footer__contact-label">Реклама</span>
+            <a class="arena-footer__contact-phone" href="tel:+77000000000" target="_blank" rel="noopener noreferrer">+7 (700) 000 0000</a>
+            <span class="arena-footer__contact-sep" aria-hidden="true">·</span>
+            <a class="arena-footer__contact-email" href="mailto:arena@gmail.com" target="_blank" rel="noopener noreferrer">arena@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="arena-footer__divider"></div>
+
+        <div class="arena-footer__bottom">
+          <div class="arena-footer__bottom-left">©2026 Arena Sports Platform</div>
+          <div class="arena-footer__bottom-center">
+            <span class="arena-footer__age-badge">18+</span>
+            <span>Правила использования материалов</span>
+            <span>Ошибка в тексте? Выделите её мышью и нажмите Ctrl+Enter</span>
+          </div>
+          <div class="arena-footer__apps">
+            <span class="arena-footer__apps-label">Скачать наше приложение</span>
+            <a href="https://apps.apple.com/" class="arena-footer__store-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-apple"></i><span>App Store</span>
+            </a>
+            <a href="https://play.google.com/store" class="arena-footer__store-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-google-play"></i><span>Google Play</span>
+            </a>
+            <a href="https://appgallery.huawei.com/" class="arena-footer__store-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-store"></i><span>AppGallery</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/arena-animations.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+</html>
+

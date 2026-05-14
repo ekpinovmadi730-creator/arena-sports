@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "t1",
+      "title": "Dynamic warm-up (15 min)",
+      "focus": "Mobility & activation",
+      "level": "All levels",
+      "duration_minutes": 15
+    },
+    {
+      "id": "t2",
+      "title": "Interval running",
+      "focus": "Speed & conditioning",
+      "level": "Intermediate",
+      "duration_minutes": 30
+    },
+    {
+      "id": "t3",
+      "title": "Core & stability circuit",
+      "focus": "Injury prevention",
+      "level": "Beginner",
+      "duration_minutes": 20
+    }
+  ]
+}
