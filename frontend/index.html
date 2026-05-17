@@ -483,12 +483,51 @@
   }
   .arena-footer__store-btn i{font-size:.9rem;}
   .arena-footer__store-btn:hover{border-color:#818cf8;background:#020617;}
+  .arena-footer__meta{
+    padding:.85rem 0 1rem;
+    border-top:1px solid rgba(148,163,184,.15);
+    margin-top:.25rem;
+  }
+  .arena-footer__meta-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:.4rem .9rem;font-size:.82rem;color:#c4c7f5;line-height:1.45;
+  }
+  .arena-footer__meta-grid p{margin:0;}
+  .arena-footer__meta-label{font-weight:600;color:#e5e7f5;}
+  .arena-footer__meta-email{color:#c4c7f5;text-decoration:none;}
+  .arena-footer__meta-email:hover{color:#fff;text-decoration:underline;}
+  .back-to-top{
+    position:fixed;bottom:1.25rem;right:1.25rem;z-index:250;
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:.55rem .95rem;border-radius:999px;
+    background:var(--orange);color:#fff;
+    font-family:'Barlow',sans-serif;font-size:.78rem;font-weight:600;
+    letter-spacing:.04em;text-decoration:none;
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 8px 24px rgba(0,0,0,.28);
+    opacity:0;visibility:hidden;
+    transform:translateY(16px) scale(.96);
+    transition:opacity .35s ease,transform .35s ease,visibility .35s,background .2s;
+    pointer-events:none;
+  }
+  .back-to-top.is-visible{
+    opacity:1;visibility:visible;
+    transform:translateY(0) scale(1);pointer-events:auto;
+  }
+  .back-to-top:hover{background:#cc4d0e;}
+  .back-to-top.is-visible:hover{transform:translateY(-2px) scale(1);}
   @media(max-width:900px){
     .arena-footer__top{flex-direction:column;}
     .arena-footer__social{justify-content:flex-start;}
     .arena-footer__contact-row{flex-direction:column;align-items:flex-start;}
     .arena-footer__bottom{flex-direction:column;align-items:flex-start;}
     .arena-footer__apps{justify-content:flex-start;}
+    .arena-footer__meta-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .back-to-top{transition:opacity .2s,visibility .2s;}
+    .back-to-top.is-visible:hover{transform:none;}
   }
 
   /* Yandex Direct-like ads (bottom banner grid) */
@@ -803,10 +842,20 @@
       </div>
     </div>
 
+    <div class="arena-footer__meta" aria-label="Жоба туралы ақпарат">
+      <div class="arena-footer__meta-grid">
+        <p><span class="arena-footer__meta-label">Авторлар:</span> Екпінов Мади, Қыдырханов Нұржан</p>
+        <p><span class="arena-footer__meta-label">Пән:</span> АКТ (Ақпараттық-коммуникациялық технологиялар)</p>
+        <p><span class="arena-footer__meta-label">Оқу орны:</span> Narxoz Университеті</p>
+        <p><span class="arena-footer__meta-label">Факультет:</span> Математика және статистика бағыты</p>
+        <p><span class="arena-footer__meta-label">E-mail:</span> <a class="arena-footer__meta-email" href="mailto:ekpinovmadi730@gmail.com">ekpinovmadi730@gmail.com</a></p>
+      </div>
+    </div>
+
     <div class="arena-footer__divider"></div>
 
     <div class="arena-footer__bottom">
-      <div class="arena-footer__bottom-left">©2026 Arena Sports Platform</div>
+      <div class="arena-footer__bottom-left">© 2026</div>
       <div class="arena-footer__bottom-center">
         <span class="arena-footer__age-badge">18+</span>
         <span>Правила использования материалов</span>
@@ -889,6 +938,8 @@
     ></video>
   </div>
 </div>
+
+<a href="#" class="back-to-top" id="back-to-top" aria-label="Жоғарыға өту">Жоғарыға ↑</a>
 
 <script src="/js/api.js"></script>
 <script src="/js/nav.js"></script>

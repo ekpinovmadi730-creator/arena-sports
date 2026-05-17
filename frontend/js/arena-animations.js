@@ -53,9 +53,29 @@
     });
   }
 
+  function setupBackToTop() {
+    const btn = document.getElementById("back-to-top");
+    if (!btn) return;
+
+    const showAfterPx = 280;
+
+    function onScroll() {
+      btn.classList.toggle("is-visible", window.scrollY > showAfterPx);
+    }
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   function init() {
     setupNavScroll();
     setupScrollReveal();
+    setupBackToTop();
   }
 
   if (document.readyState === "loading") {
