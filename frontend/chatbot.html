@@ -7,6 +7,38 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      .music-player {
+        margin-top: 1.25rem;
+        background: linear-gradient(135deg, #1a7a3c, #2ecc71);
+        border-radius: 16px;
+        padding: 1.25rem 1.5rem;
+        color: #fff;
+        box-shadow: 0 4px 18px rgba(30,160,80,.28);
+      }
+      .music-player__header {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: .03em;
+        margin-bottom: .5rem;
+      }
+      .music-player__track {
+        font-size: .9rem;
+        opacity: .9;
+        margin-bottom: .75rem;
+        font-style: italic;
+      }
+      .music-player__audio {
+        width: 100%;
+        border-radius: 10px;
+        outline: none;
+      }
+      .music-player__audio::-webkit-media-controls-panel {
+        background: rgba(255,255,255,.15);
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body data-active-nav="chatbot" class="arena-unified">
     <div id="nav-root"></div>
@@ -47,6 +79,12 @@
               <iframe id="video-frame" title="Видео на YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <p id="video-note"></p>
+          </div>
+
+          <div id="music-player" class="music-player" hidden>
+            <div class="music-player__header">🎵 Жаттығу музыкасы</div>
+            <div id="music-track-name" class="music-player__track"></div>
+            <audio id="music-audio" class="music-player__audio" controls></audio>
           </div>
         </div>
       </section>
@@ -131,6 +169,42 @@
     <script src="/js/nav.js"></script>
     <script src="/js/arena-animations.js"></script>
     <script src="/js/chat.js"></script>
+    <script>
+      (function () {
+        const EXERCISE_SONGS = {
+          "Приседания (без веса)":      "Songs/Rep By Rep.mp3",
+          "Отжимания от пола":          "Songs/Pulse Ascending.mp3",
+          "Планка на предплечьях":      "Songs/Quiet Pulse.mp3",
+          "Выпады вперёд":              "Songs/Morning Pace.mp3",
+          "Бёрпи (упрощённый вариант)": "Songs/Bounce Circuit.mp3",
+          "Ягодичный мостик":           "Songs/Flow State Circuit.mp3",
+          "Лодочка":                    "Songs/Soft Spine Flow.mp3",
+          "Скалолаз":                   "Songs/Summit Pulse.mp3",
+        };
+
+        const sel   = document.getElementById("exercise-select");
+        const player = document.getElementById("music-player");
+        const audio  = document.getElementById("music-audio");
+        const track  = document.getElementById("music-track-name");
+
+        if (!sel || !player || !audio) return;
+
+        sel.addEventListener("change", function () {
+          const opt  = sel.selectedOptions[0];
+          const title = opt && opt.value ? opt.textContent.trim() : "";
+          const song  = EXERCISE_SONGS[title];
+          if (song) {
+            track.textContent = title;
+            audio.src = song;
+            audio.load();
+            player.hidden = false;
+          } else {
+            player.hidden = true;
+            audio.src = "";
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
 
